@@ -3,46 +3,12 @@ package com.company;
 import java.util.*;
 
 public class Main {
-    public static int N;
-    public static int M;
-    public static int[][] graph;
-    public static int bfs(int x, int y) {
-        final int [] dct_x = {0,1,0,-1};
-        final int [] dct_y = {1,0,-1,0};
-        int [][] vis = new int [N][M];
-        Queue<int []> queue = new LinkedList<>();
-        queue.add(new int []{x,y,0});
-        while (!queue.isEmpty()) {
-            int [] tem = queue.poll();
-            //找到了结果
-            if(graph[tem[0]][tem[1]]==9) return tem[2];
 
-            if(vis[tem[0]][tem[1]] == 1) continue;
-            else vis[tem[0]][tem[1]] = 1;
-            System.out.println(Arrays.toString(tem));
-            for(int i = 0; i < 4; i++)
-            {
-                int new_x = tem[0]+dct_x[i];
-                int new_y = tem[1]+dct_y[i];
-                int level = tem[2]+1;
-
-
-                if(new_x >=0 && new_x <M && new_y >=0 && new_y<N && vis[new_x][new_y] == 0 && graph[new_x][new_y] != 1) {
-                    queue.add(new int[]{new_x,new_y,level});
-                }
-
-            }
-
-        }
-        return -1;
-    }
 
     public static void main(String[] args) {
 	// write your code here
-        graph = new int [][]{{0,0,0}, {1,1,0}, {9,0,0}};
-        M = 3;
-        N = 3;
-        System.out.println(bfs(0,0));
+        System.out.println(BFS.bfs(0,0));
+        System.out.println(BinarySearch.search());
     }
 
 }
