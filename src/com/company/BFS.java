@@ -5,9 +5,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BFS {
-    public static int N = 3;
-    public static int M = 3;
-    public static int[][] graph = {{0,0,0}, {1,1,0}, {9,0,0}};
+    public static int N;
+    public static int M;
+    public static int[][] graph;
     public static int bfs(int x, int y) {
         final int [] dct_x = {0,1,0,-1};
         final int [] dct_y = {1,0,-1,0};
